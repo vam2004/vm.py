@@ -1,6 +1,7 @@
 # Syntatic classes
 
-## JUMP_FAMILY:
+## Branch family:
+This class is reserved for instructions that modify the control flow of program. All instructions in assembly represent a combination of a single `instruction_code` with a `register_id`, which encoded the behavior (condition of branch) of that instructions.
 
     jump 0x0: jump [adress] # uncoditional jump
     jump 0x1: jez [adress]  # jump if equal to zero
@@ -10,7 +11,8 @@
     jump 0x5: jovr [adress] # jump if overflow
     jump 0x6: jnov [adress] # jump if not overflow
     
-## NO_IMEDIATE:
+## Pragma Instruction:
+This class contains a function that change the syntax of the next instructions. In special, one instruction can make the next instruction use the data inside one register intead of a imediate, tranforming all instruction that is "register - imediate" into "register - register" mode.
 
     rdim [register] # read imediate - read a imediate from register
     

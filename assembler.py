@@ -1,12 +1,12 @@
 """
 JUMP_FAMILY:
-    jump 0x0: jump [adress] # uncoditional jump
-    jump 0x1: jez [adress] # jump if equal to zero
-    jump 0x2: jnez [adress] # jump if not equal to zero
-    jump 0x3: jneg [adress] # jump if negative
-    jump 0x4: jpos [adress] # jump if not negative
-    jump 0x5: jovr [adress] # jump if overflow
-    jump 0x6: jnov [adress] # jump if not overflow
+    jump 0x0: jump [adress]	# uncoditional jump
+    jump 0x1: jez [adress]	# jump if equal to zero
+    jump 0x2: jnez [adress]	# jump if not equal to zero
+    jump 0x3: jneg [adress]	# jump if negative
+    jump 0x4: jpos [adress]	# jump if not negative
+    jump 0x5: jovr [adress]	# jump if overflow
+    jump 0x6: jnov [adress]	# jump if not overflow
 
 NO_IMEDIATE:
     rdim [register] # read imediate - read a imediate from register
@@ -26,14 +26,14 @@ NORMAL:
     load    [register], [value]	# set register with imediate
 
 LINKER_TAGS:
-    export [.]<name> [:] # a public label 
-    [.]<name> [:] # a label
+    export [.]<name> [:]		# a public label 
+    [.]<name> [:]				# a label
     ----------------------------------------
-    export label <name> [:] # a public label
-    label [section_name] [:] # label
+    export label <name> [:]		# a public label
+    label [section_name] [:]	# label
     ----------------------------------------
-    export const <name> [:] # a public const
-    const <name> [:]
+    export const <name> [:]		# a public const
+    const <name> [:]			#
     ----------------------------------------
 DATA_FAMILY:
     byte  [hexdecimal]  # 8-bits constant

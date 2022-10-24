@@ -1,3 +1,10 @@
+# Assembly Specification
+A `instruction` is composed by the `operation` byte followed opcionally by the two byte big-endian `imediate`. 
+The imediate can be calculate as `imediate := bytes[1] * 256 + bytes[2]`, while the operation is the first byte `operation := bytes[0]`. The operation also is also subvided into `field:opcode` (the lesser significant 4-bits) and `field:register` (the most significant 4-bits) fields.
+
+Instructions that accept a imediate can enter `imediateless` mode (or `register-register` mode), which read a value previuosly loaded into a cache. The `imediateless` is triggered by the `flag:imediate`, which is cleared in next instruction.
+# Halting
+	The interrupt `int 00, 0x0000`, should always either halt the machine, indicating the end of all syncronous procedure or a recorverable failure in the interrupt handler, unless the `flag:interrupt` was cleared.
 # Syntatic classes
 
 ## Branch family:
@@ -32,7 +39,7 @@ This class contains a function that change the syntax of the next instructions. 
     and	    [register], [value]?	# bitwise and
     or	    [register], [value]?	# bitwise or
     load    [register], [value]?	# set register with imediate
-    
+
 ## LINKER_TAGS:
 
 

@@ -84,7 +84,4 @@ Operation land(left, right) {
 Operation lor(left, right) {
   return Operation(left | right);
 }
-void main() {
-  print(uadd(10, 12));
-}
 

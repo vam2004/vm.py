@@ -41,10 +41,14 @@ This class contains a function that change the syntax of the next instructions. 
     load    [register], [value]?	# set register with imediate
 ## The imediate sintax 
 The imediate could be:
- 1. A unsigned decimal number stating with non zero decimal digit (among with 1-9), and containing only decimal digits
- 2. A unsigned hexadecimal number starting with prefix "0x" or ending with sufix "h", and contaning only case-insentive hexadecimal digits 
+ 1. A unsigned decimal number stating with non zero decimal digit (among with 1-9) or containg only "0", and containing only decimal digits
+ - example: "18920"
+ 2. A unsigned hexadecimal number prefixed "0x" or ending with sufix "h", and contaning only case-insentive hexadecimal digits
+ - examples: "0x198F", "f7h" and "07h"
  3. A unsigned binary number stating with prefix "0b" and contaning only binary digits ("0" and "1")
+ - example: "0b0011"
  4. A two-complement negative number starting with prefix "-" and followed by any unsigned counterpart specified at (1) until (3)
+ - example: "-0b101", "-9", "-9h", "-09h", "-0"
  5. All numbers specified at (1) until (4) with sepator "'" among digits that are not prefix or sufix
  6. A label starting with "."
  7. A macro starting with a alphabetical character, including underscore, followed optionally by any alphanumeric character or underscore

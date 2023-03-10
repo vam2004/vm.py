@@ -357,7 +357,7 @@ class Assembler:
             if value == '"':
                 string_mode = True
                 continue
-            if value == '#':
+            if value == '#' or value == ";":
                 return line[:index]
         return line
     
@@ -519,5 +519,17 @@ def assembler(lines):
     return data
 """
 
+if __name__ == "__main__":
+	try:
+		while True:
+			token = Assembler.pre_parse(input())
+			if token:
+				print(token)
+			else:
+				print("<empty line>")
+	except KeyboardInterrupt:
+		pass
+	except EOFError:
+		pass
 
 
